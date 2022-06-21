@@ -1,0 +1,277 @@
+ESX = nil
+
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
+RegisterServerEvent('esx_basicneeds:removeItem')
+AddEventHandler('esx_basicneeds:removeItem', function(item)
+
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
+    xPlayer.removeInventoryItem(item, 1)
+
+end)
+
+RegisterServerEvent('esx_basicneeds:updateStatus')
+AddEventHandler('esx_basicneeds:updateStatus', function(type, count)
+	
+	TriggerClientEvent('esx_status:add', source, type, count)
+
+end)
+
+-- Eating
+ESX.RegisterUsableItem('chips', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'chips', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('sandwich', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'sandwich', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('chocolate', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'chocolate', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('cacahuete', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'cacahuete', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('poire', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'poire', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('sucrebrin', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'sucrebrin', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('citron', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'citron', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('ananas', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'ananas', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('glacon', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'glacon', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('menthe', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'menthe', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('cerise', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'cerise', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('citronvert', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'citronvert', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+ESX.RegisterUsableItem('goussevanille', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onEat', source, 'prop_cs_burger_01', 'goussevanille', 'hunger', 200000, 'กิน <strong class="green-text">ขนมปัง</strong> 1 ชิ้น')
+end)
+
+-- Drink
+ESX.RegisterUsableItem('water', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'water', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('cocacola', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'cocacola', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('icetea', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'icetea', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('bierre', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'bierre', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('gin', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'gin', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('liqueurorange', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'liqueurorange', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('juscitron', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'juscitron', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('brancheromarin', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'brancheromarin', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('juspamplemouse', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'juspamplemouse', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('siropthea', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'siropthea', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('juscanneberge', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'juscanneberge', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('vinblanc', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'vinblanc', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('liqueurcuracaobleu', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'liqueurcuracaobleu', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('jusananaas', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'jusananaas', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('limonade', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'limonade', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('hanesy', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'hanesy', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('siropromarin', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'siropromarin', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('angostura', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'angostura', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('bourbon', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'bourbon', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('vermouth', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'vermouth', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('siropcanne', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'siropcanne', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('rhum', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'rhum', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('cremecoco', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'cremecoco', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('watergaz', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'watergaz', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('condelumar', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'condelumar', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('cafe', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'cafe', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('aromevanille', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'aromevanille', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('chantilly', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'chantilly', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('presquesante', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'presquesante', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('rosemarie', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'rosemarie', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('sangria', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'sangria', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('nouvellefrance', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'nouvellefrance', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('oldfashioned', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'oldfashioned', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('martini', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'martini', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('pinacoladaananas', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'pinacoladaananas', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('mojito', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'mojito', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('valhalla', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'valhalla', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
+ESX.RegisterUsableItem('vanilla', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('esx_basicneeds:onDrink', source, 'prop_ld_flow_bottle', 'vanilla', 'thirst', 200000, 'ดื่ม <strong class="blue-text">น้ำ</strong> 1 ขวด')
+end)
+
