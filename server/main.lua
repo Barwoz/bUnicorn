@@ -3,7 +3,7 @@ ESX = nil
     TriggerEvent(Config.InitESX, function(obj) ESX = obj end)
 
 print("^0| ^1UNICORN JOB^7 | ^0CREATED BY^7 ^2BARWOZ^7 | ^3FOR B SHOP^7")
-print("^0| ^1OUR SHOP^7 | ^4https://memory-s.fr/^7")
+print("^0| ^1OUR SHOP^7 | ^4https://memorys-fivem.tebex.io/^7")
 
 ----------------------MenuF6
 -----Annonce

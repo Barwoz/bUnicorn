@@ -3,16 +3,16 @@ ESX = nil
     TriggerEvent(Config.InitESX, function(obj) ESX = obj end)
     
 print("^0| ^1UNICORN JOB^7 | ^0CREATED BY^7 ^2BARWOZ^7 | ^3FOR B SHOP^7")
-print("^0| ^1OUR SHOP^7 | ^4https://memory-s.fr/^7")
+print("^0| ^1OUR SHOP^7 | ^4https://memorys-fivem.tebex.io/^7")
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
     ESX.PlayerData = xPlayer
 end)
 
-function RefreshPlayerDataUni()
+function RefreshPlayerData()
     CreateThread(function()
-        Wait(10000)
+        Wait(250)
         ESX.PlayerData = ESX.GetPlayerData()
     end)
 end
@@ -137,9 +137,9 @@ CreateThread(function()
     while true do 
         local interval = 250
         local coord = GetEntityCoords(PlayerPedId())
-        RefreshPlayerDataUni()
-        if ESX.PlayerData.job and ESX.PlayerData.job.name == 'unicorn' then
             for k, v in pairs(Config.MarkerUni) do
+                RefreshPlayerData()
+                if ESX.PlayerData.job and ESX.PlayerData.job.name == 'unicorn' then
                     local dist = GetDistanceBetweenCoords(coord, v.position, true)
                     if dist < 5 then 
                         interval = 1
@@ -149,7 +149,7 @@ CreateThread(function()
                         if dist < 1.5 then 
                             Visual.Subtitle(v.help)
                             if IsControlJustPressed(1,51) then 
-                                RefreshPlayerDataUni()
+                                RefreshPlayerData()
                                 v.interact()
                             end 
                         end 

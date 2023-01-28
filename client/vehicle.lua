@@ -23,15 +23,6 @@ function OpenVehMenuUni()
             while VehUni do
                 Wait(1)
                 RageUI.IsVisible(vehMenu, function()
-                    RageUI.Button("~r~→~s~ Ranger le Véhicule", nil, {RightLabel = "→→"}, true, { 
-                        onSelected = function()
-                            local veh, dist = ESX.Game.GetClosestVehicle(playerCoords)
-                            if dist < 4 then
-                                DeleteEntity(veh)
-                            end
-                        end
-                    })
-
                     RageUI.List('~r~→~s~ Sortir un Véhicule', {'~b~T20~s~', '~b~Bisson~s~', '~b~Limousine~s~'}, Index.List1, nil, {}, true, {
                         onListChange = function(i, Item)
                             Index.List1 = i;
